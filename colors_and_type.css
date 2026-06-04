@@ -1,0 +1,154 @@
+/* ============================================================
+   HalalSnap — Colors & Type Foundations
+   Light mode only. Derived from the app icon + brand guidelines.
+   Load this file, then use the semantic vars below.
+   ============================================================ */
+
+/* ---- Webfont: marketing display + UI body --------------------
+   The HalalSnap wordmark is a custom rounded italic (shipped as an
+   image asset — assets/logo_oneline.png). For headings/body we use
+   Plus Jakarta Sans (clean, modern, friendly — not over-used).
+   The native app itself renders in the platform system font, so the
+   --font-ui stack falls back to that for app-accurate mockups.    */
+/* Webfont is loaded non-render-blocking from index.html, so the page paints
+   instantly on the system-font fallback in the stacks below. */
+
+:root {
+  /* ---------- BRAND PALETTE ---------- */
+  --teal:        #00D4AA;  /* PRIMARY — brand, primary buttons, positive/active */
+  --teal-bright: #3FDFC4;  /* gradient start */
+  --blue:        #4A90E2;  /* SECONDARY — links, secondary buttons, support */
+  --blue-grad:   #5B8DEF;  /* gradient end */
+  --purple:      #8B5CF6;  /* ACCENT — community / premium, used sparingly */
+
+  --anchor:      #0B3B3A;  /* dark teal "lens" — footer, dark cards, depth */
+  --anchor-deep: #082028;  /* near-black — shadows on dark */
+
+  /* Signature gradient — hero, primary buttons, brand moments ONLY.
+     Never behind body text or large flat sections. */
+  --gradient-brand: linear-gradient(135deg, #3FDFC4 0%, #00D4AA 45%, #5B8DEF 100%);
+  --gradient-brand-soft: linear-gradient(135deg, #E9FBF6 0%, #EAF1FE 100%);
+
+  /* ---------- SURFACES & BACKGROUNDS ---------- */
+  --bg:          #F9FAFB;  /* page background */
+  --surface:     #FFFFFF;  /* cards, sheets */
+  --surface-2:   #F3F4F6;  /* subtle insets, thumbnails, chips */
+  --cream:       #EAF6F2;  /* warm accent on dark surfaces */
+  --border:      #E5E7EB;  /* hairline dividers, card borders */
+  --border-2:    #D1D5DB;  /* stronger dividers */
+
+  /* ---------- TEXT ---------- */
+  --text:        #1F2937;  /* primary body + headings */
+  --text-muted:  #6B7280;  /* secondary text, captions */
+  --text-faint:  #9CA3AF;  /* timestamps, placeholders, disabled */
+  --on-brand:    #FFFFFF;  /* text on gradient / teal / anchor */
+  --on-dark:     #EAF6F2;  /* cream text on the dark anchor */
+
+  /* ---------- STATUS (verdict UI only) ---------- */
+  --halal:        #16A34A;  /* halal — green */
+  --halal-bg:     #ECFDF3;  /* halal surface tint */
+  --likely:       #34C759;  /* likely halal — lighter green */
+  --doubtful:     #F59E0B;  /* doubtful / mashkook — amber */
+  --doubtful-bg:  #FFFBEB;  /* amber surface tint */
+  --haram:        #DC2626;  /* haram — red */
+  --haram-bg:     #FEF2F2;  /* haram surface tint */
+  --unknown:      #9CA3AF;  /* unrecognizable — grey */
+  --unknown-bg:   #F3F4F6;
+
+  /* ---------- TYPE FAMILIES ---------- */
+  --font-display: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  --font-ui:      -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+  --font-body:    'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+
+  /* ---------- TYPE SCALE (web / marketing) ---------- */
+  --fs-display:   clamp(40px, 6vw, 64px);  /* hero headline */
+  --fs-h1:        clamp(32px, 4.5vw, 48px);
+  --fs-h2:        clamp(26px, 3vw, 34px);
+  --fs-h3:        22px;
+  --fs-lead:      19px;   /* intro paragraphs under a headline */
+  --fs-body:      17px;
+  --fs-small:     15px;
+  --fs-caption:   13px;
+  --fs-overline:  13px;   /* uppercase label */
+
+  --lh-tight:     1.08;
+  --lh-snug:      1.25;
+  --lh-body:      1.6;
+
+  --fw-regular:   400;
+  --fw-medium:    500;
+  --fw-semibold:  600;
+  --fw-bold:      700;
+  --fw-extra:     800;
+
+  /* ---------- RADII ---------- */
+  --r-sm:   8px;
+  --r-md:   12px;   /* default card / button radius */
+  --r-lg:   16px;   /* large cards, sheets */
+  --r-xl:   20px;   /* modals, hero cards */
+  --r-pill: 999px;  /* chips, pills, capsule buttons */
+
+  /* ---------- SPACING (4pt base) ---------- */
+  --s-1: 4px;
+  --s-2: 8px;
+  --s-3: 12px;
+  --s-4: 16px;
+  --s-5: 20px;
+  --s-6: 24px;
+  --s-8: 32px;
+  --s-10: 40px;
+  --s-12: 48px;
+  --s-16: 64px;
+  --s-20: 80px;
+
+  /* ---------- SHADOWS (soft, low-contrast) ---------- */
+  --shadow-xs: 0 1px 2px rgba(11, 59, 58, 0.06);
+  --shadow-sm: 0 2px 8px rgba(11, 59, 58, 0.06);
+  --shadow-md: 0 6px 20px rgba(11, 59, 58, 0.08);
+  --shadow-lg: 0 16px 40px rgba(11, 59, 58, 0.12);
+  --shadow-teal: 0 10px 30px rgba(0, 212, 170, 0.30);   /* primary button lift */
+  --shadow-purple: 0 10px 30px rgba(139, 92, 246, 0.25);
+}
+
+/* ============================================================
+   SEMANTIC ELEMENT DEFAULTS
+   Apply to a document or scope to get on-brand typography.
+   ============================================================ */
+
+.hs-scope, body.hs {
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--font-body);
+  font-size: var(--fs-body);
+  line-height: var(--lh-body);
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+.hs-display {
+  font-family: var(--font-display);
+  font-weight: var(--fw-extra);
+  font-size: var(--fs-display);
+  line-height: var(--lh-tight);
+  letter-spacing: -0.02em;
+  color: var(--text);
+  text-wrap: balance;
+}
+
+.hs-h1 { font-family: var(--font-display); font-weight: var(--fw-bold); font-size: var(--fs-h1); line-height: var(--lh-tight); letter-spacing: -0.02em; text-wrap: balance; }
+.hs-h2 { font-family: var(--font-display); font-weight: var(--fw-bold); font-size: var(--fs-h2); line-height: var(--lh-snug); letter-spacing: -0.01em; text-wrap: balance; }
+.hs-h3 { font-family: var(--font-display); font-weight: var(--fw-semibold); font-size: var(--fs-h3); line-height: var(--lh-snug); }
+.hs-lead { font-size: var(--fs-lead); line-height: var(--lh-body); color: var(--text-muted); text-wrap: pretty; }
+.hs-body { font-size: var(--fs-body); line-height: var(--lh-body); color: var(--text); text-wrap: pretty; }
+.hs-small { font-size: var(--fs-small); line-height: 1.5; color: var(--text-muted); }
+.hs-caption { font-size: var(--fs-caption); line-height: 1.4; color: var(--text-faint); }
+.hs-overline {
+  font-size: var(--fs-overline);
+  font-weight: var(--fw-bold);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--teal);
+}
+
+a.hs-link { color: var(--blue); text-decoration: none; }
+a.hs-link:hover { text-decoration: underline; }
