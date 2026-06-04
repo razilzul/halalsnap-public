@@ -59,19 +59,34 @@
   a.ulink:hover { text-decoration: underline; }
   .mazhab-tab { transition: background .16s ease, color .16s ease, border-color .16s ease; }
 
+  /* scroll cue — shown only on mobile (where the hero stacks) */
+  .scroll-cue { display: none; align-items: center; gap: 7px; margin-top: 24px; color: rgba(255,255,255,.9); font-size: 12.5px; font-weight: 700; letter-spacing: .05em; text-transform: uppercase; text-decoration: none; }
+  .scroll-cue .chev { display: inline-flex; animation: cueBounce 1.5s ease-in-out infinite; }
+  @keyframes cueBounce { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(5px); } }
+
+  /* trailer click-to-play facade (loads the YouTube iframe only on click) */
+  .trailer-facade { position: relative; display: block; width: 100%; padding: 0; border: none; cursor: pointer; background: var(--anchor); aspect-ratio: 16 / 9; border-radius: 20px; overflow: hidden; box-shadow: var(--shadow-lg); }
+  .trailer-facade img { width: 100%; height: 100%; object-fit: cover; transition: transform .3s ease, opacity .3s ease; }
+  .trailer-facade:hover img { transform: scale(1.03); opacity: .92; }
+  .play-btn { position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 84px; height: 84px; border-radius: 50%; background: rgba(0,212,170,.95); display: flex; align-items: center; justify-content: center; box-shadow: 0 12px 34px rgba(0,0,0,.35); transition: transform .16s ease; }
+  .trailer-facade:hover .play-btn { transform: translate(-50%, -50%) scale(1.07); }
+
   @media (prefers-reduced-motion: reduce) {
     html { scroll-behavior: auto; }
-    .lift, .btn-press, .badge-lift, .mazhab-tab { transition: none !important; }
+    .lift, .btn-press, .badge-lift, .mazhab-tab, .trailer-facade img { transition: none !important; }
+    .scroll-cue .chev { animation: none !important; }
   }
 
   /* ---------------- RESPONSIVE ---------------- */
   .wrap { max-width: 1180px; margin: 0 auto; padding: 0 28px; }
 
   @media (max-width: 980px) {
-    .hero-grid { grid-template-columns: 1fr !important; text-align: center; }
+    .hero-grid { grid-template-columns: 1fr !important; text-align: center; padding-top: 52px !important; padding-bottom: 60px !important; }
     .hero-grid .hero-copy { align-items: center; }
     .hero-grid .hero-badges, .hero-grid .hero-trust { justify-content: center; }
-    .hero-grid .hero-phonewrap { order: -1; margin-bottom: 8px; }
+    /* phone drops BELOW the pitch so the headline + download buttons are seen first */
+    .hero-grid .hero-phonewrap { order: 1; margin-top: 26px; }
+    .scroll-cue { display: inline-flex; }
     .steps-grid { grid-template-columns: 1fr !important; }
     .cat-grid { grid-template-columns: 1fr 1fr !important; }
     .mazhab-grid { grid-template-columns: 1fr !important; }
@@ -84,6 +99,7 @@
   }
   @media (max-width: 560px) {
     .wrap { padding: 0 18px; }
+    .phone-frame { width: 248px !important; }
     .cat-grid { grid-template-columns: 1fr !important; }
     .footer-grid { grid-template-columns: 1fr !important; }
     .news-card { padding: 24px !important; }
@@ -98,6 +114,7 @@
     <a href="#top" style="display:inline-flex"><img src="assets/logo_oneline.png" alt="HalalSnap" style="height:36px"></a>
     <nav class="navlinks" style="display:flex;align-items:center;gap:32px">
       <a href="#how" class="ulink" style="font-size:15px;font-weight:600;color:var(--text-muted);text-decoration:none">How it works</a>
+      <a href="#watch" class="ulink" style="font-size:15px;font-weight:600;color:var(--text-muted);text-decoration:none">Watch</a>
       <a href="#categories" class="ulink" style="font-size:15px;font-weight:600;color:var(--text-muted);text-decoration:none">Categories</a>
       <a href="#mazhab" class="ulink" style="font-size:15px;font-weight:600;color:var(--text-muted);text-decoration:none">Mazhab</a>
       <a href="#community" class="ulink" style="font-size:15px;font-weight:600;color:var(--text-muted);text-decoration:none">Community</a>
@@ -137,10 +154,11 @@
         <span class="ic" data-icon="shield-checkmark-outline" data-size="18px" style="color:#EAF6F2"></span>
         <span>Guidance, not certainty — always verify important cases with official certification.</span>
       </div>
+      <a href="#how" class="scroll-cue">See how it works <span class="chev ic" data-icon="chevron-forward-outline" data-size="16px" style="transform:rotate(90deg);color:rgba(255,255,255,.9)"></span></a>
     </div>
     <div class="hero-phonewrap" style="display:flex;justify-content:center;align-items:center;position:relative">
       <div style="position:absolute;width:340px;height:340px;border-radius:50%;background:rgba(11,59,58,.28);filter:blur(50px)"></div>
-      <div style="width:300px;aspect-ratio:390 / 844;border-radius:39px;background:#0b0b0d;padding:7.8px;transform:rotate(-3deg);box-shadow:0 40px 90px rgba(0,0,0,.45), 0 10px 30px rgba(0,0,0,.35);flex:0 0 auto;position:relative">
+      <div class="phone-frame" style="width:300px;aspect-ratio:390 / 844;border-radius:39px;background:#0b0b0d;padding:7.8px;transform:rotate(-3deg);box-shadow:0 40px 90px rgba(0,0,0,.45), 0 10px 30px rgba(0,0,0,.35);flex:0 0 auto;position:relative">
         <div style="position:absolute;top:3.2%;left:50%;transform:translateX(-50%);width:32%;height:22px;background:#0b0b0d;border-radius:12px;z-index:3"></div>
         <div style="width:100%;height:100%;border-radius:31px;overflow:hidden;background:#000;position:relative">
           <img src="assets/screens/result-food.jpg" alt="HalalSnap scan result" style="width:100%;height:100%;object-fit:cover;object-position:top">
@@ -164,6 +182,22 @@
         </span>
       </span>
     </a>
+  </div>
+</section>
+
+<!-- ===================== TRAILER ===================== -->
+<section id="watch" style="padding:84px 0 8px">
+  <div class="wrap">
+    <div style="max-width:620px;margin:0 auto;text-align:center;margin-bottom:40px">
+      <div style="font-size:13px;font-weight:700;letter-spacing:.09em;text-transform:uppercase;color:var(--teal);margin-bottom:14px">Watch</div>
+      <h2 style="font-family:var(--font-display);font-weight:800;font-size:clamp(28px,3.6vw,42px);letter-spacing:-.02em;line-height:1.1;margin:0;color:var(--text);text-wrap:balance">See HalalSnap in action.</h2>
+    </div>
+    <div id="trailer-wrap" style="max-width:900px;margin:0 auto">
+      <button type="button" class="trailer-facade lift" onclick="loadTrailer()" aria-label="Play the HalalSnap promo video">
+        <img src="https://i.ytimg.com/vi/5hZ9rIn0P-E/maxresdefault.jpg" alt="HalalSnap promo video — tap to play" loading="lazy" width="1280" height="720">
+        <span class="play-btn"><svg width="30" height="30" viewBox="0 0 24 24" fill="#fff" aria-hidden="true" style="margin-left:4px"><path d="M8 5v14l11-7z"></path></svg></span>
+      </button>
+    </div>
   </div>
 </section>
 
@@ -569,6 +603,17 @@
   }
   toggleBtn.addEventListener('click', function () { showAll = !showAll; renderIngredients(); });
   renderIngredients();
+
+  // ---- Trailer: swap the facade for the YouTube iframe only on click ----
+  window.loadTrailer = function () {
+    var w = document.getElementById('trailer-wrap');
+    if (!w) return;
+    w.innerHTML = '<div style="position:relative;aspect-ratio:16/9;border-radius:20px;overflow:hidden;box-shadow:var(--shadow-lg)">' +
+      '<iframe src="https://www.youtube-nocookie.com/embed/5hZ9rIn0P-E?autoplay=1&rel=0" title="HalalSnap promo video" ' +
+      'style="position:absolute;inset:0;width:100%;height:100%;border:0" ' +
+      'allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" ' +
+      'referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div>';
+  };
 
   // ---- Render all static [data-icon] icons ----
   if (window.hsRenderIcons) window.hsRenderIcons();
