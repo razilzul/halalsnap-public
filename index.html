@@ -3,13 +3,17 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>HalalSnap — Halal clarity, in a snap</title>
-<meta name="description" content="HalalSnap is an AI-powered halal assistant. Point your camera at any ingredient list and get instant, mazhab-aware guidance across food, cosmetics, supplements, personal care and more.">
+<title>HalalSnap — AI Halal Checker &amp; Ingredient Scanner App</title>
+<meta name="description" content="Free AI halal checker — scan any product's ingredient list for instant, mazhab-aware guidance on its halal status. Food, cosmetics, supplements & more. iOS & Android.">
 <meta name="theme-color" content="#00D4AA">
+<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1">
+<meta name="author" content="HalalSnap">
+<meta name="application-name" content="HalalSnap">
 <link rel="canonical" href="https://halalsnap.org/">
 
 <!-- Open Graph / social -->
 <meta property="og:type" content="website">
+<meta property="og:locale" content="en_US">
 <meta property="og:site_name" content="HalalSnap">
 <meta property="og:title" content="HalalSnap — Halal clarity, in a snap">
 <meta property="og:description" content="An AI-powered halal assistant. Snap any ingredient list and get instant, mazhab-aware guidance across food, cosmetics, supplements and more.">
@@ -22,6 +26,97 @@
 <meta name="twitter:title" content="HalalSnap — Halal clarity, in a snap">
 <meta name="twitter:description" content="An AI-powered halal assistant. Snap any ingredient list and get instant, mazhab-aware guidance.">
 <meta name="twitter:image" content="https://halalsnap.org/assets/og-image.png">
+
+<!-- Structured data (schema.org) — Organization, WebSite, MobileApplication, VideoObject, FAQ -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": "https://halalsnap.org/#organization",
+      "name": "HalalSnap",
+      "url": "https://halalsnap.org/",
+      "logo": "https://halalsnap.org/assets/icon.png",
+      "sameAs": [
+        "https://apps.apple.com/sg/app/halalsnap/id6747142470",
+        "https://play.google.com/store/apps/details?id=com.halalsnap.app",
+        "https://www.youtube.com/@HalalSnap"
+      ]
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://halalsnap.org/#website",
+      "url": "https://halalsnap.org/",
+      "name": "HalalSnap",
+      "publisher": { "@id": "https://halalsnap.org/#organization" },
+      "inLanguage": "en"
+    },
+    {
+      "@type": "MobileApplication",
+      "@id": "https://halalsnap.org/#app",
+      "name": "HalalSnap",
+      "operatingSystem": "iOS, Android",
+      "applicationCategory": "LifestyleApplication",
+      "description": "AI-powered halal assistant. Scan any product's ingredient list and get instant, mazhab-aware guidance on its halal status across food, cosmetics, dental, supplements and personal care.",
+      "url": "https://halalsnap.org/",
+      "image": "https://halalsnap.org/assets/og-image.png",
+      "downloadUrl": [
+        "https://apps.apple.com/sg/app/halalsnap/id6747142470",
+        "https://play.google.com/store/apps/details?id=com.halalsnap.app"
+      ],
+      "publisher": { "@id": "https://halalsnap.org/#organization" },
+      "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" }
+    },
+    {
+      "@type": "VideoObject",
+      "name": "HalalSnap Promo",
+      "description": "See how HalalSnap checks a product's halal status with AI in seconds.",
+      "thumbnailUrl": "https://i.ytimg.com/vi/5hZ9rIn0P-E/maxresdefault.jpg",
+      "uploadDate": "2026-06-04",
+      "embedUrl": "https://www.youtube-nocookie.com/embed/5hZ9rIn0P-E",
+      "contentUrl": "https://www.youtube.com/watch?v=5hZ9rIn0P-E",
+      "publisher": { "@id": "https://halalsnap.org/#organization" }
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://halalsnap.org/#faq",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Is HalalSnap free?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Yes. Every member gets free scan credits each week, and you can earn more by inviting friends or leaving a review. An optional premium plan helps fund free access for the community." }
+        },
+        {
+          "@type": "Question",
+          "name": "How does HalalSnap work?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Point your camera at a product's ingredient list (or pick a photo). In seconds, our AI reads every ingredient, weighs it against Islamic jurisprudence, and returns a clear verdict with plain-language reasoning." }
+        },
+        {
+          "@type": "Question",
+          "name": "What can I scan with HalalSnap?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Food and beverages, cosmetics and beauty, dental and oral care, supplements and vitamins, personal care, and more — each analysed with considerations tuned to its category." }
+        },
+        {
+          "@type": "Question",
+          "name": "Does HalalSnap support different madhhabs?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Yes. Choose Hanafi, Shafi'i, Maliki, Hanbali, or General, and the guidance adapts to that school's principles while noting where scholars differ." }
+        },
+        {
+          "@type": "Question",
+          "name": "Is HalalSnap available on iPhone and Android?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Yes. HalalSnap is free to download on the Apple App Store and Google Play." }
+        },
+        {
+          "@type": "Question",
+          "name": "Does HalalSnap replace official halal certification?",
+          "acceptedAnswer": { "@type": "Answer", "text": "No. HalalSnap offers AI-assisted guidance, not a religious ruling. For important or doubtful cases, always verify with a qualified scholar or official halal certification." }
+        }
+      ]
+    }
+  ]
+}
+</script>
 
 <link rel="icon" href="assets/fav_icon.png">
 <link rel="apple-touch-icon" href="assets/icon.png">
@@ -340,7 +435,7 @@
       <!-- Card 1 — Verdict -->
       <div style="background:var(--surface);border-radius:20px;padding:20px;box-shadow:0 24px 60px rgba(0,0,0,.32)">
         <div style="position:relative;border-radius:14px;overflow:hidden;background:var(--surface-2)">
-          <img src="assets/result-product-v3.jpg" alt="JÄTTEN CHOKLAD SMAK" style="width:100%;height:140px;object-fit:cover;display:block">
+          <img src="assets/result-product-v3.jpg" alt="Example HalalSnap scan result for a chocolate-flavoured wafer" loading="lazy" decoding="async" style="width:100%;height:140px;object-fit:cover;display:block">
           <div style="position:absolute;top:10px;left:50%;transform:translateX(-50%);background:rgba(31,41,55,.82);color:#fff;border-radius:999px;padding:5px 14px;font-size:12.5px;font-weight:700;white-space:nowrap;backdrop-filter:blur(4px)">JÄTTEN CHOKLAD SMAK</div>
           <div style="position:absolute;bottom:10px;left:50%;transform:translateX(-50%);background:rgba(31,41,55,.82);color:#fff;border-radius:999px;padding:4px 12px;font-size:12px;font-weight:600;backdrop-filter:blur(4px)">Image Clarity 95%</div>
         </div>
@@ -389,7 +484,7 @@
     <div class="news-card" style="background:var(--bg);border:1px solid var(--border);border-radius:24px;padding:36px;box-shadow:var(--shadow-sm);max-width:940px;margin:0 auto">
       <div class="news-grid" style="display:grid;grid-template-columns:300px 1fr;gap:34px;align-items:center">
         <div style="position:relative">
-          <img src="assets/founder-bh.jpg" alt="Razil Zulkarnain Taha, Founder of HalalSnap" style="display:block;width:100%;height:370px;border-radius:18px;object-fit:cover">
+          <img src="assets/founder-bh.jpg" alt="Razil Zulkarnain Taha, Founder of HalalSnap" loading="lazy" decoding="async" style="display:block;width:100%;height:370px;border-radius:18px;object-fit:cover">
           <div style="position:absolute;left:14px;bottom:14px;right:14px;background:rgba(11,59,58,.88);color:#fff;border-radius:12px;padding:9px 14px;backdrop-filter:blur(4px)">
             <div style="font-weight:700;font-size:14px;line-height:1.2;white-space:nowrap">Razil Zulkarnain Taha</div>
             <div style="font-size:12px;opacity:.8;margin-top:3px;white-space:nowrap">Founder, HalalSnap</div>
@@ -470,6 +565,42 @@
   </div>
 </section>
 
+<!-- ===================== FAQ ===================== -->
+<section id="faq" style="background:var(--surface);border-top:1px solid var(--border);border-bottom:1px solid var(--border);padding:88px 0">
+  <div class="wrap" style="max-width:820px">
+    <div style="text-align:center;margin-bottom:44px">
+      <div style="font-size:13px;font-weight:700;letter-spacing:.09em;text-transform:uppercase;color:var(--teal);margin-bottom:14px">FAQ</div>
+      <h2 style="font-family:var(--font-display);font-weight:800;font-size:clamp(28px,3.6vw,42px);letter-spacing:-.02em;line-height:1.1;margin:0;color:var(--text);text-wrap:balance">Questions, answered.</h2>
+    </div>
+    <div style="display:flex;flex-direction:column;gap:14px">
+      <div style="background:var(--bg);border:1px solid var(--border);border-radius:16px;padding:24px 26px">
+        <h3 style="font-family:var(--font-display);font-weight:700;font-size:18px;color:var(--text);margin:0 0 8px">Is HalalSnap free?</h3>
+        <p style="font-size:15.5px;color:var(--text-muted);line-height:1.6;margin:0">Yes. Every member gets free scan credits each week, and you can earn more by inviting friends or leaving a review. An optional premium plan helps fund free access for the community.</p>
+      </div>
+      <div style="background:var(--bg);border:1px solid var(--border);border-radius:16px;padding:24px 26px">
+        <h3 style="font-family:var(--font-display);font-weight:700;font-size:18px;color:var(--text);margin:0 0 8px">How does HalalSnap work?</h3>
+        <p style="font-size:15.5px;color:var(--text-muted);line-height:1.6;margin:0">Point your camera at a product's ingredient list (or pick a photo). In seconds, our AI reads every ingredient, weighs it against Islamic jurisprudence, and returns a clear verdict with plain-language reasoning.</p>
+      </div>
+      <div style="background:var(--bg);border:1px solid var(--border);border-radius:16px;padding:24px 26px">
+        <h3 style="font-family:var(--font-display);font-weight:700;font-size:18px;color:var(--text);margin:0 0 8px">What can I scan with HalalSnap?</h3>
+        <p style="font-size:15.5px;color:var(--text-muted);line-height:1.6;margin:0">Food and beverages, cosmetics and beauty, dental and oral care, supplements and vitamins, personal care, and more — each analysed with considerations tuned to its category.</p>
+      </div>
+      <div style="background:var(--bg);border:1px solid var(--border);border-radius:16px;padding:24px 26px">
+        <h3 style="font-family:var(--font-display);font-weight:700;font-size:18px;color:var(--text);margin:0 0 8px">Does HalalSnap support different madhhabs?</h3>
+        <p style="font-size:15.5px;color:var(--text-muted);line-height:1.6;margin:0">Yes. Choose Hanafi, Shafi'i, Maliki, Hanbali, or General, and the guidance adapts to that school's principles while noting where scholars differ.</p>
+      </div>
+      <div style="background:var(--bg);border:1px solid var(--border);border-radius:16px;padding:24px 26px">
+        <h3 style="font-family:var(--font-display);font-weight:700;font-size:18px;color:var(--text);margin:0 0 8px">Is HalalSnap available on iPhone and Android?</h3>
+        <p style="font-size:15.5px;color:var(--text-muted);line-height:1.6;margin:0">Yes. HalalSnap is free to download on the Apple App Store and Google Play.</p>
+      </div>
+      <div style="background:var(--bg);border:1px solid var(--border);border-radius:16px;padding:24px 26px">
+        <h3 style="font-family:var(--font-display);font-weight:700;font-size:18px;color:var(--text);margin:0 0 8px">Does HalalSnap replace official halal certification?</h3>
+        <p style="font-size:15.5px;color:var(--text-muted);line-height:1.6;margin:0">No. HalalSnap offers AI-assisted guidance, not a religious ruling. For important or doubtful cases, always verify with a qualified scholar or official halal certification.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
 <!-- ===================== FINAL CTA ===================== -->
 <section id="download" style="padding:80px 0">
   <div class="wrap">
@@ -508,6 +639,7 @@
       <a href="#categories" class="ulink" style="display:block;font-size:14px;color:var(--cream);opacity:.72;text-decoration:none;margin-bottom:11px">Categories</a>
       <a href="#mazhab" class="ulink" style="display:block;font-size:14px;color:var(--cream);opacity:.72;text-decoration:none;margin-bottom:11px">Mazhab-aware</a>
       <a href="#community" class="ulink" style="display:block;font-size:14px;color:var(--cream);opacity:.72;text-decoration:none;margin-bottom:11px">Community</a>
+      <a href="#faq" class="ulink" style="display:block;font-size:14px;color:var(--cream);opacity:.72;text-decoration:none;margin-bottom:11px">FAQ</a>
     </div>
     <div>
       <div style="font-weight:700;font-size:14px;color:#fff;margin-bottom:16px">Company</div>
