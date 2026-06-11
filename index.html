@@ -41,7 +41,11 @@
       "sameAs": [
         "https://apps.apple.com/sg/app/halalsnap/id6747142470",
         "https://play.google.com/store/apps/details?id=com.halalsnap.app",
-        "https://www.youtube.com/@HalalSnap"
+        "https://www.youtube.com/@HalalSnap",
+        "https://www.instagram.com/halalsnap_ai/",
+        "https://www.tiktok.com/@halalsnap_official",
+        "https://www.facebook.com/profile.php?id=61577365013359",
+        "https://x.com/HalalSnap"
       ]
     },
     {
@@ -136,6 +140,8 @@
   * { box-sizing: border-box; }
   img { display: block; }
   .ic { display: inline-flex; align-items: center; justify-content: center; line-height: 0; }
+  .social-link { transition: background .18s ease, transform .18s ease; }
+  .social-link:hover { background: rgba(255,255,255,.22) !important; transform: translateY(-2px); }
 
   /* Subtle 8-point star geometric texture — understated, never stereotypical */
   .motif-stars {
@@ -632,6 +638,13 @@
     <div>
       <img src="assets/logo_oneline.png" alt="HalalSnap" style="height:34px;margin-bottom:16px">
       <p style="font-size:14.5px;color:var(--cream);opacity:.7;line-height:1.6;max-width:290px;margin:0">An AI-powered halal assistant for the Muslim community — calm, private, and honest about what it can do.</p>
+      <div style="display:flex;gap:10px;margin-top:18px;flex-wrap:wrap">
+        <a href="https://www.instagram.com/halalsnap_ai/" target="_blank" rel="noopener noreferrer" aria-label="HalalSnap on Instagram" class="social-link" style="width:38px;height:38px;border-radius:11px;background:rgba(255,255,255,.10);border:1px solid rgba(255,255,255,.16);color:var(--cream);display:inline-flex;align-items:center;justify-content:center;text-decoration:none"><span class="ic" data-icon="logo-instagram" data-size="19px"></span></a>
+        <a href="https://www.tiktok.com/@halalsnap_official" target="_blank" rel="noopener noreferrer" aria-label="HalalSnap on TikTok" class="social-link" style="width:38px;height:38px;border-radius:11px;background:rgba(255,255,255,.10);border:1px solid rgba(255,255,255,.16);color:var(--cream);display:inline-flex;align-items:center;justify-content:center;text-decoration:none"><span class="ic" data-icon="logo-tiktok" data-size="18px"></span></a>
+        <a href="https://www.youtube.com/@HalalSnap" target="_blank" rel="noopener noreferrer" aria-label="HalalSnap on YouTube" class="social-link" style="width:38px;height:38px;border-radius:11px;background:rgba(255,255,255,.10);border:1px solid rgba(255,255,255,.16);color:var(--cream);display:inline-flex;align-items:center;justify-content:center;text-decoration:none"><span class="ic" data-icon="logo-youtube" data-size="20px"></span></a>
+        <a href="https://www.facebook.com/profile.php?id=61577365013359" target="_blank" rel="noopener noreferrer" aria-label="HalalSnap on Facebook" class="social-link" style="width:38px;height:38px;border-radius:11px;background:rgba(255,255,255,.10);border:1px solid rgba(255,255,255,.16);color:var(--cream);display:inline-flex;align-items:center;justify-content:center;text-decoration:none"><span class="ic" data-icon="logo-facebook" data-size="19px"></span></a>
+        <a href="https://x.com/HalalSnap" target="_blank" rel="noopener noreferrer" aria-label="HalalSnap on X (Twitter)" class="social-link" style="width:38px;height:38px;border-radius:11px;background:rgba(255,255,255,.10);border:1px solid rgba(255,255,255,.16);color:var(--cream);display:inline-flex;align-items:center;justify-content:center;text-decoration:none"><span class="ic" data-icon="logo-x" data-size="16px"></span></a>
+      </div>
     </div>
     <div>
       <div style="font-weight:700;font-size:14px;color:#fff;margin-bottom:16px">Product</div>
