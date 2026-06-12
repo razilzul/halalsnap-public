@@ -258,6 +258,14 @@
           </a>
         </div>
       </div>
+      <!-- Referral code banner: hidden unless the URL carries ?ref=CODE (filled by the script before </body>) -->
+      <div id="ref-banner" hidden style="align-items:center;gap:12px;flex-wrap:wrap;align-self:flex-start;margin-top:18px;background:rgba(255,255,255,.16);border:1px solid rgba(255,255,255,.35);border-radius:14px;padding:12px 16px;color:#fff">
+        <span style="font-size:20px" aria-hidden="true">🎁</span>
+        <span style="font-size:14.5px;line-height:1.45">Your friend sent you bonus credits! After installing, enter code
+          <strong id="ref-code" style="font-family:monospace;letter-spacing:.06em;background:rgba(255,255,255,.18);border-radius:8px;padding:2px 8px"></strong>
+          in the app — you both earn free scans.</span>
+        <button id="ref-copy" type="button" style="display:inline-flex;align-items:center;gap:6px;background:var(--teal,#00D4AA);color:#06302a;border:none;border-radius:999px;padding:8px 16px;font-size:13.5px;font-weight:700;cursor:pointer">Copy code</button>
+      </div>
       <div class="hero-trust" style="display:flex;align-items:center;gap:9px;margin-top:26px;color:rgba(255,255,255,.78);font-size:14.5px">
         <span class="ic" data-icon="shield-checkmark-outline" data-size="18px" style="color:#EAF6F2"></span>
         <span>Guidance, not certainty — always verify important cases with official certification.</span>
@@ -775,6 +783,37 @@
 
   // ---- Render all static [data-icon] icons ----
   if (window.hsRenderIcons) window.hsRenderIcons();
+
+  // ---- Referral link handling (?ref=CODE from in-app share captions) ----
+  // Surfaces the code with a copy button; the app has no install attribution
+  // yet, so the user enters the code manually after install.
+  (function () {
+    var raw = new URLSearchParams(location.search).get('ref') || '';
+    // Codes are app-generated (HALAL + base36); whitelist hard to be safe.
+    var code = raw.toUpperCase().replace(/[^A-Z0-9_-]/g, '').slice(0, 24);
+    if (!code) return;
+    var banner = document.getElementById('ref-banner');
+    var codeEl = document.getElementById('ref-code');
+    var copyBtn = document.getElementById('ref-copy');
+    if (!banner || !codeEl || !copyBtn) return;
+    codeEl.textContent = code; // textContent only — never markup
+    banner.hidden = false;
+    banner.style.display = 'flex';
+    copyBtn.addEventListener('click', function () {
+      var done = function () {
+        copyBtn.textContent = 'Copied ✓';
+        setTimeout(function () { copyBtn.textContent = 'Copy code'; }, 2000);
+      };
+      if (navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard.writeText(code).then(done, done);
+      } else {
+        var ta = document.createElement('textarea');
+        ta.value = code; document.body.appendChild(ta); ta.select();
+        try { document.execCommand('copy'); } catch (e) {}
+        document.body.removeChild(ta); done();
+      }
+    });
+  })();
 })();
 </script>
 </body>
