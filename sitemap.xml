@@ -1,10 +1,35 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>https://halalsnap.org/</loc>
-    <lastmod>2026-06-05</lastmod>
+    <lastmod>2026-06-12</lastmod>
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://halalsnap.org/"/>
+    <xhtml:link rel="alternate" hreflang="ms" href="https://halalsnap.org/ms/"/>
+    <xhtml:link rel="alternate" hreflang="id" href="https://halalsnap.org/id/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://halalsnap.org/"/>
+  </url>
+  <url>
+    <loc>https://halalsnap.org/ms/</loc>
+    <lastmod>2026-06-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://halalsnap.org/"/>
+    <xhtml:link rel="alternate" hreflang="ms" href="https://halalsnap.org/ms/"/>
+    <xhtml:link rel="alternate" hreflang="id" href="https://halalsnap.org/id/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://halalsnap.org/"/>
+  </url>
+  <url>
+    <loc>https://halalsnap.org/id/</loc>
+    <lastmod>2026-06-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://halalsnap.org/"/>
+    <xhtml:link rel="alternate" hreflang="ms" href="https://halalsnap.org/ms/"/>
+    <xhtml:link rel="alternate" hreflang="id" href="https://halalsnap.org/id/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://halalsnap.org/"/>
   </url>
   <url>
     <loc>https://halalsnap.org/privacy-policy.html</loc>
