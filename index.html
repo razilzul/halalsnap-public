@@ -199,6 +199,8 @@
     .cat-grid { grid-template-columns: 1fr 1fr !important; }
     .mazhab-grid { grid-template-columns: 1fr !important; }
     .result-grid { grid-template-columns: 1fr !important; }
+    .watchfor-grid { grid-template-columns: 1fr !important; }
+    .wf-back { display: none !important; }
     .news-grid { grid-template-columns: 1fr !important; }
     .privacy-grid { grid-template-columns: 1fr !important; }
     .comm-grid { grid-template-columns: 1fr !important; }
@@ -224,6 +226,7 @@
       <a href="#how" class="ulink" style="font-size:15px;font-weight:600;color:var(--text-muted);text-decoration:none">How it works</a>
       <a href="#watch" class="ulink" style="font-size:15px;font-weight:600;color:var(--text-muted);text-decoration:none">Watch</a>
       <a href="#categories" class="ulink" style="font-size:15px;font-weight:600;color:var(--text-muted);text-decoration:none">Categories</a>
+      <a href="#watchfor" class="ulink" style="font-size:15px;font-weight:600;color:var(--text-muted);text-decoration:none">Watch for</a>
       <a href="#mazhab" class="ulink" style="font-size:15px;font-weight:600;color:var(--text-muted);text-decoration:none">Mazhab</a>
       <a href="#community" class="ulink" style="font-size:15px;font-weight:600;color:var(--text-muted);text-decoration:none">Community</a>
     </nav>
@@ -492,6 +495,63 @@
       </div>
       <div style="font-size:12px;color:rgba(234,246,242,.6);text-align:center;line-height:1.5">An example result · HalalSnap is not a substitute for official halal certification.</div>
     </div>
+  </div>
+</section>
+
+<!-- ===================== WATCH FOR (1.6.0) ===================== -->
+<section id="watchfor" style="padding:88px 0">
+  <div class="wrap">
+    <div class="watchfor-grid" style="display:grid;grid-template-columns:1.02fr .98fr;gap:56px;align-items:center">
+      <div>
+        <div style="font-size:13px;font-weight:700;letter-spacing:.09em;text-transform:uppercase;color:var(--teal);margin-bottom:14px">New in the app · Watch for</div>
+        <h2 style="font-family:var(--font-display);font-weight:800;font-size:clamp(28px,3.6vw,42px);letter-spacing:-.02em;line-height:1.1;margin:0;color:var(--text);text-wrap:balance">One snap checks halal. Then it watches for what is personal to you.</h2>
+        <p style="font-size:18px;color:var(--text-muted);line-height:1.6;margin:18px 0 28px;max-width:520px;text-wrap:pretty">Switch on Watch for and quiet, personal checks sit under your halal verdict: allergy alerts for the big nine, a sugar read, a keto check, and a new Pregnancy watch. They help you look closer. They are flags, never rulings.</p>
+        <div style="display:flex;flex-direction:column;gap:12px">
+          <div class="lift" style="display:flex;gap:14px;align-items:flex-start;background:var(--surface);border:1px solid var(--border);border-radius:16px;padding:16px 18px;box-shadow:var(--shadow-xs)">
+            <div style="width:44px;height:44px;border-radius:12px;background:var(--surface-2);display:flex;align-items:center;justify-content:center;font-size:22px;flex:0 0 auto">⚠️</div>
+            <div>
+              <div style="font-family:var(--font-display);font-weight:700;font-size:16.5px;color:var(--text);margin-bottom:3px">Allergy alerts</div>
+              <div style="font-size:14.5px;color:var(--text-muted);line-height:1.5">Flags the big nine when the label lists them. It cannot see factory traces, so always check the &ldquo;may contain&rdquo; line.</div>
+            </div>
+          </div>
+          <div class="lift" style="display:flex;gap:14px;align-items:flex-start;background:var(--surface);border:1px solid var(--border);border-radius:16px;padding:16px 18px;box-shadow:var(--shadow-xs)">
+            <div style="width:44px;height:44px;border-radius:12px;background:var(--surface-2);display:flex;align-items:center;justify-content:center;font-size:22px;flex:0 0 auto">🥑</div>
+            <div>
+              <div style="font-family:var(--font-display);font-weight:700;font-size:16.5px;color:var(--text);margin-bottom:3px">Sugar &amp; keto</div>
+              <div style="font-size:14.5px;color:var(--text-muted);line-height:1.5">A quick read on added sugar, and whether a product fits a keto day.</div>
+            </div>
+          </div>
+          <div class="lift" style="display:flex;gap:14px;align-items:flex-start;background:var(--surface);border:1px solid var(--border);border-radius:16px;padding:16px 18px;box-shadow:var(--shadow-xs)">
+            <div style="width:44px;height:44px;border-radius:12px;background:var(--surface-2);display:flex;align-items:center;justify-content:center;font-size:22px;flex:0 0 auto">🤰</div>
+            <div>
+              <div style="font-family:var(--font-display);font-weight:700;font-size:16.5px;color:var(--text);margin-bottom:3px">Pregnancy watch</div>
+              <div style="font-size:14.5px;color:var(--text-muted);line-height:1.5">Practical heads-ups on things like caffeine, unpasteurised dairy or high-mercury fish. <strong style="color:var(--text);font-weight:700">General guidance, not medical advice.</strong></div>
+            </div>
+          </div>
+        </div>
+        <div style="display:flex;align-items:center;flex-wrap:wrap;gap:18px;margin-top:22px">
+          <span style="display:inline-flex;align-items:center;gap:8px;font-size:14px;color:var(--text-muted)"><span class="ic" data-icon="lock-closed-outline" data-size="16px" style="color:var(--teal)"></span> Every check stays on your phone.</span>
+          <a href="/pregnant/" class="ulink" style="display:inline-flex;align-items:center;gap:6px;font-weight:700;font-size:14.5px;color:var(--blue);text-decoration:none">Can I eat this while pregnant?<span class="ic" data-icon="chevron-forward-outline" data-size="15px" style="color:var(--blue)"></span></a>
+        </div>
+      </div>
+      <div style="display:flex;justify-content:center">
+        <div style="position:relative;display:flex;justify-content:center;align-items:center">
+          <div class="phone-frame wf-back" style="width:300px;aspect-ratio:390 / 844;border-radius:39px;background:#0b0b0d;padding:7.8px;transform:rotate(-6deg);box-shadow:0 30px 70px rgba(0,0,0,.26);flex:0 0 auto;position:absolute;top:-16px;left:-64px;z-index:1;opacity:.97">
+            <div style="position:absolute;top:3.2%;left:50%;transform:translateX(-50%);width:32%;height:22px;background:#0b0b0d;border-radius:12px;z-index:3"></div>
+            <div style="width:100%;height:100%;border-radius:31px;overflow:hidden;background:#000">
+              <img src="assets/screens/watchfor-sheet-1.6.0.png" alt="The Watch for sheet in the app: allergy alerts for the big nine, and a Pregnancy watch toggle" loading="lazy" style="width:100%;height:100%;object-fit:cover;object-position:top">
+            </div>
+          </div>
+          <div class="phone-frame" style="width:300px;aspect-ratio:390 / 844;border-radius:39px;background:#0b0b0d;padding:7.8px;transform:rotate(2.5deg);box-shadow:0 40px 90px rgba(0,0,0,.30), 0 10px 30px rgba(0,0,0,.28);flex:0 0 auto;position:relative;z-index:2">
+            <div style="position:absolute;top:3.2%;left:50%;transform:translateX(-50%);width:32%;height:22px;background:#0b0b0d;border-radius:12px;z-index:3"></div>
+            <div style="width:100%;height:100%;border-radius:31px;overflow:hidden;background:#000">
+              <img src="assets/screens/result-pregnancy-1.6.0.png" alt="A HalalSnap coffee scan: a Halal verdict, with a Pregnancy watch note on caffeine and a not-medical-advice line" style="width:100%;height:100%;object-fit:cover;object-position:top">
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div style="text-align:center;margin-top:30px;font-size:12.5px;color:var(--text-faint);line-height:1.5">An example scan. HalalSnap flags, it does not certify. Pregnancy notes are general guidance, not medical advice.</div>
   </div>
 </section>
 
