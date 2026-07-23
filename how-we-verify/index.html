@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>How we verify | HalalSnap</title>
+<meta name="description" content="Before any HalalSnap update ships it must survive 38 real products, 5 trap products built to tempt a wrong halal answer, and about 600 test scans. Read what we caught along the way, and what the app does when it is not sure.">
+<link rel="canonical" href="https://halalsnap.org/how-we-verify/">
+<link rel="alternate" hreflang="en" href="https://halalsnap.org/how-we-verify/">
+<link rel="alternate" hreflang="x-default" href="https://halalsnap.org/how-we-verify/">
+<meta name="robots" content="index,follow">
+
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="HalalSnap">
+<meta property="og:title" content="How we verify | HalalSnap">
+<meta property="og:description" content="38 real products, 5 trap products, about 600 test scans before any update ships. And the one catch we are glad we made.">
+<meta property="og:url" content="https://halalsnap.org/how-we-verify/">
+<meta property="og:image" content="https://halalsnap.org/assets/og-image.png">
+<meta name="twitter:card" content="summary_large_image">
+
+<link rel="icon" href="../assets/fav_icon.png">
+<link rel="apple-touch-icon" href="../assets/icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" media="print" onload="this.media='all'" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800;1,500;1,700&display=swap">
+<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800;1,500;1,700&display=swap"></noscript>
+<link rel="stylesheet" href="../colors_and_type.css">
+<script src="../assets/icons.js"></script>
+<style>
+  html { scroll-behavior: smooth; }
+  html, body { margin: 0; padding: 0; }
+  body { background: var(--bg); font-family: var(--font-body); color: var(--text); overflow-x: hidden; }
+  * { box-sizing: border-box; }
+  img { display: block; }
+  .ic { display: inline-flex; align-items: center; justify-content: center; line-height: 0; }
+  .wrap { max-width: 1100px; margin: 0 auto; padding: 0 28px; }
+  .lift { transition: transform .16s ease, box-shadow .16s ease; }
+  .lift:hover { transform: translateY(-3px); box-shadow: var(--shadow-lg); }
+  a.ulink:hover { text-decoration: underline; }
+  .gate-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
+  .help-grid { display: grid; grid-template-columns: 1.1fr .9fr; gap: 48px; align-items: center; }
+  .prose p { font-size: 17px; color: var(--text); line-height: 1.7; margin: 0 0 18px; text-wrap: pretty; }
+  @media (max-width: 900px) {
+    .gate-grid { grid-template-columns: 1fr 1fr; }
+    .help-grid { grid-template-columns: 1fr; }
+    .help-phone { order: -1; }
+  }
+  @media (max-width: 560px) { .wrap { padding: 0 18px; } .gate-grid { grid-template-columns: 1fr; } }
+</style>
+</head>
+<body class="hs">
+
+<!-- NAV -->
+<header style="position:sticky;top:0;z-index:60;background:rgba(249,250,251,.82);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border-bottom:1px solid var(--border)">
+  <div class="wrap" style="display:flex;align-items:center;justify-content:space-between;height:72px">
+    <a href="/" style="display:inline-flex"><img src="../assets/logo_oneline.png" alt="HalalSnap" style="height:36px"></a>
+    <a href="/#download" style="background:var(--teal);color:#fff;border:none;border-radius:999px;padding:11px 24px;font-weight:700;font-size:15px;text-decoration:none;box-shadow:0 6px 16px rgba(0,212,170,.28)">Get the app</a>
+  </div>
+</header>
+
+<!-- HERO -->
+<section style="padding:64px 0 8px">
+  <div class="wrap" style="max-width:760px">
+    <nav aria-label="Breadcrumb" style="font-size:13px;color:var(--text-faint);margin-bottom:20px">
+      <a href="/" class="ulink" style="color:var(--text-muted);text-decoration:none">HalalSnap</a> &nbsp;&rsaquo;&nbsp; <span>How we verify</span>
+    </nav>
+    <div style="font-size:13px;font-weight:700;letter-spacing:.09em;text-transform:uppercase;color:var(--teal);margin-bottom:14px">Trust · How we test every update</div>
+    <h1 style="font-family:var(--font-display);font-weight:800;font-size:clamp(32px,5vw,52px);line-height:1.08;letter-spacing:-.025em;margin:0;color:var(--text);text-wrap:balance">We caught our AI claiming a halal certification it could not see.</h1>
+    <p style="font-size:19px;color:var(--text-muted);line-height:1.6;margin:20px 0 0;text-wrap:pretty">It was answering from brand memory, not the photo. We fixed it, re-tested until it stopped, and only then shipped. That is the bar every HalalSnap update has to clear before it reaches you. This page shows you the bar.</p>
+  </div>
+</section>
+
+<!-- THE QUESTION IS YOURS -->
+<section style="padding:56px 0 16px">
+  <div class="wrap prose" style="max-width:760px">
+    <h2 style="font-family:var(--font-display);font-weight:800;font-size:clamp(24px,3vw,34px);letter-spacing:-.02em;line-height:1.15;margin:0 0 16px;color:var(--text)">The question is yours. The homework is ours.</h2>
+    <p>"Is this halal?" is your question, and you can point it at anything you eat, drink, or put on your body: food, drinks, supplements, cosmetics, toothpaste. HalalSnap's job is to read what is actually in front of the camera and report what settled scholarship and your authority's published standards say about it, with the reasoning shown.</p>
+    <p>An app that answers a question like that has one duty above all others: it must never claim more than the evidence in front of it. So before any update ships, we spend our time trying to make it fail.</p>
+  </div>
+</section>
+
+<!-- WHAT EVERY UPDATE MUST SURVIVE -->
+<section style="padding:48px 0 64px">
+  <div class="wrap">
+    <h2 style="font-family:var(--font-display);font-weight:800;font-size:clamp(24px,3vw,34px);letter-spacing:-.02em;line-height:1.15;margin:0 0 8px;color:var(--text)">What every update must survive</h2>
+    <p style="font-size:16px;color:var(--text-muted);line-height:1.6;margin:0 0 32px;max-width:620px">Measured July 2026, for the update currently on your phone.</p>
+    <div class="gate-grid">
+      <div class="lift" style="background:var(--surface);border:1px solid var(--border);border-radius:18px;padding:24px;box-shadow:var(--shadow-xs)">
+        <span style="width:48px;height:48px;border-radius:13px;background:var(--gradient-brand-soft);color:var(--teal);display:flex;align-items:center;justify-content:center;margin-bottom:16px"><span class="ic" data-icon="checkmark-done-outline" data-size="24px"></span></span>
+        <div style="font-family:var(--font-display);font-weight:700;font-size:18px;color:var(--text);margin-bottom:6px">38 real products, read correctly</div>
+        <div style="font-size:14.5px;color:var(--text-muted);line-height:1.55">Groceries, drinks, supplements, cosmetics, toothpaste. If it misreads one, the update does not ship.</div>
+      </div>
+      <div class="lift" style="background:var(--surface);border:1px solid var(--border);border-radius:18px;padding:24px;box-shadow:var(--shadow-xs)">
+        <span style="width:48px;height:48px;border-radius:13px;background:var(--gradient-brand-soft);color:var(--teal);display:flex;align-items:center;justify-content:center;margin-bottom:16px"><span class="ic" data-icon="flask-outline" data-size="24px"></span></span>
+        <div style="font-family:var(--font-display);font-weight:700;font-size:18px;color:var(--text);margin-bottom:6px">5 trap products</div>
+        <div style="font-size:14.5px;color:var(--text-muted);line-height:1.55">Built to tempt a wrong halal answer: cooking wine bottled like a seasoning, marshmallows with unstated gelatin, gummies with the label hidden, a wall of E-numbers, vitamins with a gelatin carrier. It has to refuse the bait every single time.</div>
+      </div>
+      <div class="lift" style="background:var(--surface);border:1px solid var(--border);border-radius:18px;padding:24px;box-shadow:var(--shadow-xs)">
+        <span style="width:48px;height:48px;border-radius:13px;background:var(--gradient-brand-soft);color:var(--teal);display:flex;align-items:center;justify-content:center;margin-bottom:16px"><span class="ic" data-icon="repeat-outline" data-size="24px"></span></span>
+        <div style="font-family:var(--font-display);font-weight:700;font-size:18px;color:var(--text);margin-bottom:6px">The same product, 20 times</div>
+        <div style="font-size:14.5px;color:var(--text-muted);line-height:1.55">The old engine changed its answer on one product partway through. The new one gave the same answer all 20 times. An answer you cannot repeat is not an answer.</div>
+      </div>
+      <div class="lift" style="background:var(--surface);border:1px solid var(--border);border-radius:18px;padding:24px;box-shadow:var(--shadow-xs)">
+        <span style="width:48px;height:48px;border-radius:13px;background:var(--gradient-brand-soft);color:var(--teal);display:flex;align-items:center;justify-content:center;margin-bottom:16px"><span class="ic" data-icon="analytics-outline" data-size="24px"></span></span>
+        <div style="font-family:var(--font-display);font-weight:700;font-size:18px;color:var(--text);margin-bottom:6px">About 600 test scans</div>
+        <div style="font-size:14.5px;color:var(--text-muted);line-height:1.55">Each answer graded against scholar-sourced rulings for correctness, tone, and clarity before release.</div>
+      </div>
+      <div class="lift" style="background:var(--surface);border:1px solid var(--border);border-radius:18px;padding:24px;box-shadow:var(--shadow-xs)">
+        <span style="width:48px;height:48px;border-radius:13px;background:var(--gradient-brand-soft);color:var(--teal);display:flex;align-items:center;justify-content:center;margin-bottom:16px"><span class="ic" data-icon="shield-checkmark-outline" data-size="24px"></span></span>
+        <div style="font-family:var(--font-display);font-weight:700;font-size:18px;color:var(--text);margin-bottom:6px">The standard behind all of it</div>
+        <div style="font-size:14.5px;color:var(--text-muted);line-height:1.55">In every test round, it never called a product more permissible than the evidence in front of it. It is allowed to be cautious. It is never allowed to be generous with your deen.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- THE CATCH -->
+<section style="background:var(--surface);border-top:1px solid var(--border);border-bottom:1px solid var(--border);padding:72px 0">
+  <div class="wrap prose" style="max-width:760px">
+    <h2 style="font-family:var(--font-display);font-weight:800;font-size:clamp(24px,3vw,34px);letter-spacing:-.02em;line-height:1.15;margin:0 0 16px;color:var(--text)">The catch we are glad we made</h2>
+    <p>During testing, the new engine did something that looked small and was not. It claimed a product carried halal certification. There was no certification anywhere in the photo. It recognised the brand and answered from memory, the way a person might say "oh, that brand is certified" without looking at the pack in their hand.</p>
+    <p>Brands change suppliers. Certifications lapse. The pack in your hand is the only pack that counts.</p>
+    <p>So we wrote a permanent rule into the engine: memory is never allowed to establish certification. Only what is visible in the photo can. Then we re-tested until the false claim happened zero times in ten attempts, shipped, and checked again on the live service. Still zero.</p>
+    <p style="margin-bottom:0">Testing can never promise forever. What it can do is prove the bar, and that rule now guards every scan you take.</p>
+  </div>
+</section>
+
+<!-- WHEN IT IS NOT SURE -->
+<section style="padding:72px 0 24px">
+  <div class="wrap prose" style="max-width:760px">
+    <h2 style="font-family:var(--font-display);font-weight:800;font-size:clamp(24px,3vw,34px);letter-spacing:-.02em;line-height:1.15;margin:0 0 16px;color:var(--text)">When it is not sure, you will know</h2>
+    <p>Point it at a product with no readable label and it will not pretend. It tells you what it is assuming and how confident it can be. When an ingredient needs source verification, it says so and points you to the manufacturer or a trusted authority. Certification only counts when it can actually be seen.</p>
+    <p>And yes, it got faster too: a typical scan now comes back in about 7 seconds, measured July 2026, roughly 40% quicker than before. Speed was the easy part. The testing above is why we shipped it.</p>
+    <div style="display:flex;gap:12px;align-items:flex-start;background:var(--surface);border:1px solid var(--border);border-radius:14px;padding:16px 18px;margin-top:8px">
+      <span class="ic" data-icon="shield-checkmark-outline" data-size="20px" style="color:var(--teal);margin-top:2px"></span>
+      <p style="margin:0;font-size:15px;color:var(--text-muted);line-height:1.6">No scanner can promise certainty. HalalSnap grades the evidence it can see, shows its reasoning, and tells you when an ingredient needs a closer look. For a final ruling, ask your scholar. For certification, check the certifying body. The decision stays yours.</p>
+    </div>
+  </div>
+</section>
+
+<!-- WHY ONE PERSON -->
+<section style="padding:40px 0 72px">
+  <div class="wrap prose" style="max-width:760px">
+    <h2 style="font-family:var(--font-display);font-weight:800;font-size:clamp(24px,3vw,34px);letter-spacing:-.02em;line-height:1.15;margin:0 0 16px;color:var(--text)">Why one person does all this</h2>
+    <p style="margin-bottom:0">HalalSnap is built by one founder. I cannot make it the loudest app in the store, but I can make it the hardest one to fool, and I can show my work. Every subscription funds free scans for people who cannot afford them, and every update passes the same bar before it reaches either of you.</p>
+  </div>
+</section>
+
+<!-- SEE IT YOURSELF -->
+<section style="background:var(--surface);border-top:1px solid var(--border);border-bottom:1px solid var(--border);padding:72px 0">
+  <div class="wrap">
+    <div class="help-grid">
+      <div>
+        <div style="font-size:13px;font-weight:700;letter-spacing:.09em;text-transform:uppercase;color:var(--teal);margin-bottom:14px">See it for yourself</div>
+        <h2 style="font-family:var(--font-display);font-weight:800;font-size:clamp(26px,3.2vw,38px);letter-spacing:-.02em;line-height:1.12;margin:0;color:var(--text);text-wrap:balance">Snap something. Watch it show its work.</h2>
+        <p style="font-size:17px;color:var(--text-muted);line-height:1.6;margin:16px 0 22px;text-wrap:pretty">Every result opens with the verdict, then walks you through the evidence it used to get there, ingredient by ingredient.</p>
+        <ul style="list-style:none;padding:0;margin:0 0 26px;display:flex;flex-direction:column;gap:11px">
+          <li style="display:flex;gap:10px;align-items:flex-start;font-size:15.5px;color:var(--text)"><span class="ic" data-icon="document-text-outline" data-size="18px" style="color:var(--teal);margin-top:2px"></span> The halal verdict, with the reasoning shown.</li>
+          <li style="display:flex;gap:10px;align-items:flex-start;font-size:15.5px;color:var(--text)"><span class="ic" data-icon="eye-outline" data-size="18px" style="color:var(--teal);margin-top:2px"></span> No label? It tells you what it is assuming.</li>
+          <li style="display:flex;gap:10px;align-items:flex-start;font-size:15.5px;color:var(--text)"><span class="ic" data-icon="book-outline" data-size="18px" style="color:var(--teal);margin-top:2px"></span> Tuned to your school of thought.</li>
+        </ul>
+        <div style="display:flex;gap:14px;flex-wrap:wrap">
+          <a href="https://apps.apple.com/app/halalsnap/id6747142470" target="_blank" rel="noopener noreferrer" style="display:inline-flex;align-items:center;gap:10px;background:var(--anchor);color:#fff;border-radius:14px;padding:11px 20px;text-decoration:none">
+            <span class="ic" data-icon="logo-apple" data-size="24px" style="color:#fff"></span>
+            <span style="line-height:1.05;text-align:left"><span style="font-size:10px;opacity:.85;display:block">Download on the</span><span style="font-size:16px;font-weight:700">App Store</span></span>
+          </a>
+          <a href="https://play.google.com/store/apps/details?id=com.halalsnap.app" target="_blank" rel="noopener noreferrer" style="display:inline-flex;align-items:center;gap:10px;background:var(--anchor);color:#fff;border-radius:14px;padding:11px 20px;text-decoration:none">
+            <span class="ic" data-icon="logo-google-playstore" data-size="22px" style="color:#fff"></span>
+            <span style="line-height:1.05;text-align:left"><span style="font-size:10px;opacity:.85;display:block">Get it on</span><span style="font-size:16px;font-weight:700">Google Play</span></span>
+          </a>
+        </div>
+      </div>
+      <div class="help-phone" style="display:flex;justify-content:center">
+        <div style="width:280px;aspect-ratio:390 / 844;border-radius:38px;background:#0b0b0d;padding:7.5px;transform:rotate(2deg);box-shadow:0 40px 90px rgba(0,0,0,.28), 0 10px 30px rgba(0,0,0,.26);flex:0 0 auto;position:relative">
+          <div style="position:absolute;top:3.2%;left:50%;transform:translateX(-50%);width:32%;height:21px;background:#0b0b0d;border-radius:12px;z-index:3"></div>
+          <div style="width:100%;height:100%;border-radius:30px;overflow:hidden;background:#000">
+            <img src="../assets/screens/result-1.5.0.png" alt="A HalalSnap result screen: the verdict at the top with the reasoning and ingredient list shown beneath it" loading="lazy" style="width:100%;height:100%;object-fit:cover;object-position:top">
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer style="background:var(--anchor);color:var(--on-dark);padding:44px 0">
+  <div class="wrap" style="display:flex;flex-wrap:wrap;gap:16px;align-items:center;justify-content:space-between">
+    <div style="font-size:14px;color:rgba(234,246,242,.75)">© HalalSnap · <a href="/" class="ulink" style="color:var(--cream);text-decoration:none">halalsnap.org</a></div>
+    <div style="display:flex;gap:20px;font-size:14px">
+      <a href="/" class="ulink" style="color:var(--cream);text-decoration:none">Home</a>
+      <a href="/privacy-policy.html" class="ulink" style="color:var(--cream);text-decoration:none">Privacy</a>
+      <a href="/terms-of-service.html" class="ulink" style="color:var(--cream);text-decoration:none">Terms</a>
+    </div>
+  </div>
+</footer>
+
+<script>if (window.hsRenderIcons) window.hsRenderIcons();</script>
+</body>
+</html>
