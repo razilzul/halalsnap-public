@@ -38,6 +38,12 @@ assets/
   logo_oneline.png  fav_icon.png  icon.png
   og-image.png         ← 1200×630 social share card
   result-product-v3.jpg  founder-bh.jpg  screens/result-food.jpg
+ingredients/ research/ ms/ingredients/ id/ingredients/ assets/ingredients.css
+                       ← GENERATED (app #691). Do not hand-edit. Rebuild from the app repo:
+                         node scripts/site/build-ingredient-pages.js <this repo>
+                         node scripts/site/check-pages.js <this repo>
+                         The same run rewrites the block between the ingredients:start/end
+                         markers in sitemap.xml. Data: app repo src/data/additives.json.
 404.html               ← branded not-found page (GitHub Pages serves it automatically)
 robots.txt  sitemap.xml
 CNAME                  ← "halalsnap.org" (halalsnap-public only — configures the custom domain)
