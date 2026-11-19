@@ -1997,6 +1997,8 @@
   <url><loc>https://halalsnap.org/products/cn/</loc><lastmod>2026-11-09</lastmod></url>
   <url><loc>https://halalsnap.org/products/tr/</loc><lastmod>2026-11-09</lastmod></url>
   <url><loc>https://halalsnap.org/products/pk/</loc><lastmod>2026-11-09</lastmod></url>
+  <url><loc>https://halalsnap.org/products/brands/meiji/</loc><lastmod>2026-11-19</lastmod></url>
+  <url><loc>https://halalsnap.org/products/brands/nissin/</loc><lastmod>2026-11-19</lastmod></url>
   <url><loc>https://halalsnap.org/products/brands/post/</loc><lastmod>2026-11-19</lastmod></url>
   <url><loc>https://halalsnap.org/products/brands/kirkland-signature/</loc><lastmod>2026-11-18</lastmod></url>
   <url><loc>https://halalsnap.org/products/brands/kirkland/</loc><lastmod>2026-11-18</lastmod></url>
@@ -2132,7 +2134,6 @@
   <url><loc>https://halalsnap.org/products/brands/orihiro/</loc><lastmod>2026-11-09</lastmod></url>
   <url><loc>https://halalsnap.org/products/brands/amanoya/</loc><lastmod>2026-11-09</lastmod></url>
   <url><loc>https://halalsnap.org/products/brands/medicube/</loc><lastmod>2026-11-09</lastmod></url>
-  <url><loc>https://halalsnap.org/products/brands/meiji/</loc><lastmod>2026-11-09</lastmod></url>
   <url><loc>https://halalsnap.org/products/brands/pista-and-tokyo/</loc><lastmod>2026-11-09</lastmod></url>
   <url><loc>https://halalsnap.org/products/brands/htc-group/</loc><lastmod>2026-11-09</lastmod></url>
   <url><loc>https://halalsnap.org/products/brands/tolle/</loc><lastmod>2026-11-09</lastmod></url>
@@ -2181,6 +2182,10 @@
   <url><loc>https://halalsnap.org/products/brands/laiyifen/</loc><lastmod>2026-11-09</lastmod></url>
   <url><loc>https://halalsnap.org/products/brands/hermes/</loc><lastmod>2026-11-09</lastmod></url>
   <url><loc>https://halalsnap.org/products/brands/post-consumer-brands/</loc><lastmod>2026-11-09</lastmod></url>
+  <url><loc>https://halalsnap.org/products/sg/meiji-hello-panda-biscuits/</loc><lastmod>2026-11-19</lastmod></url>
+  <url><loc>https://halalsnap.org/products/gb/nissin-ufo-instant-noodles/</loc><lastmod>2026-11-19</lastmod></url>
+  <url><loc>https://halalsnap.org/products/gb/nissin-instant-noodles/</loc><lastmod>2026-11-19</lastmod></url>
+  <url><loc>https://halalsnap.org/products/gb/fairprice-canned-longan/</loc><lastmod>2026-11-19</lastmod></url>
   <url><loc>https://halalsnap.org/products/sg/dongsuh-post-oreo-os/</loc><lastmod>2026-11-19</lastmod></url>
   <url><loc>https://halalsnap.org/products/gb/peckish-cheddar-cheese/</loc><lastmod>2026-11-19</lastmod></url>
   <url><loc>https://halalsnap.org/products/us/kirkland-signature-tuxedo-chocolate-mousse-cake/</loc><lastmod>2026-11-18</lastmod></url>
