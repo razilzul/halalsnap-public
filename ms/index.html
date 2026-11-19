@@ -212,6 +212,7 @@
     .footer-grid { grid-template-columns: 1fr !important; }
     .news-card { padding: 24px !important; }
   }
+  @media (max-width: 600px) { .press-sep { display: none; } }
 </style>
 </head>
 <body class="hs">
@@ -281,7 +282,7 @@
 <section style="background:var(--surface);border-bottom:1px solid var(--border)">
   <div class="wrap" style="display:flex;align-items:center;justify-content:center;flex-wrap:wrap;gap:14px 32px;padding:26px 28px">
     <span style="font-size:12.5px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--text-faint)">Seperti dipaparkan di</span>
-    <span style="width:1px;height:30px;background:var(--border)"></span>
+    <span class="press-sep" style="width:1px;height:30px;background:var(--border)"></span>
     <a href="https://www.beritaharian.sg/singapura/jurutera-perisian-hasilkan-halalsnap-permudah-semakan-status-halal-guna-ai" target="_blank" rel="noopener noreferrer" style="text-decoration:none;opacity:.92">
       <span style="display:inline-flex;align-items:center;gap:11px">
         <span style="width:40px;height:40px;border-radius:50%;background:#1F3A8A;color:#fff;display:inline-flex;align-items:center;justify-content:center;font-family:Georgia,'Times New Roman',serif;font-weight:700;font-size:17px;letter-spacing:.01em;flex:0 0 auto">BH</span>
@@ -291,6 +292,14 @@
         </span>
       </span>
     </a>
+    <span class="press-sep" style="width:1px;height:30px;background:var(--border)"></span>
+    <span title="Warna Vista, 16 November 2026" style="display:inline-flex;align-items:center;gap:11px;opacity:.92">
+      <span style="width:40px;height:40px;border-radius:50%;background:var(--anchor);color:#fff;display:inline-flex;align-items:center;justify-content:center;font-family:var(--font-display);font-weight:800;font-size:12.5px;letter-spacing:-.01em;flex:0 0 auto">94.2</span>
+      <span style="line-height:1.05;text-align:left">
+        <span style="display:block;font-family:var(--font-display);font-weight:800;font-size:18px;color:var(--text);letter-spacing:-.01em">Warna 94.2</span>
+        <span style="display:block;font-size:11px;letter-spacing:.22em;text-transform:uppercase;color:var(--text-faint);font-family:var(--font-body);font-weight:600">Warna Vista</span>
+      </span>
+    </span>
   </div>
 </section>
 
