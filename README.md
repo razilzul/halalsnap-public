@@ -61,7 +61,7 @@ onload>`), so the page paints instantly on the system-font fallback.
 |---|---|
 | **Headline / tagline** | Hero `<h1>` (search `Halal clarity, in a snap`). Also update `og:title` / hero is the visible one. |
 | **Hero sub-text / value prop** | `<p>` right under the hero `<h1>`. |
-| **App-store links** | Search `apps.apple.com/sg/app/halalsnap/id6747142470` and `play.google.com/...com.halalsnap.app` (appear in hero, final CTA, **and** the JSON-LD). Update all. |
+| **App-store links** | Badge hrefs carry campaign tags for install attribution (#878): don't hand-edit them, run `node scripts/site/tag-hand-pages.js <this repo>` from the halalsnap app repo (format in its `scripts/site/store-links.js`). JSON-LD `downloadUrl`/`installUrl` stay the clean `apps.apple.com/app/halalsnap/id6747142470` and `play.google.com/...com.halalsnap.app` URLs. |
 | **The phone screenshot in the hero** | `assets/screens/result-food.jpg` (referenced ~hero). Keep aspect ratio tall. |
 | **The example result image** | `assets/result-product-v3.jpg`. |
 | **The trailer video** | Replace the YouTube ID `5hZ9rIn0P-E` everywhere: the facade `<img>` thumbnail, the `loadTrailer()` iframe src, **and** the `VideoObject` JSON-LD (`thumbnailUrl`, `embedUrl`, `contentUrl`). Also fix `VideoObject.uploadDate`. |
